@@ -11,6 +11,7 @@ perform better if that feature actually has a non-linear correlation.
 * Inputation with mean or mode
 * Algorithms ignoring missing values: KNN, decision tree. But the existing
 funcions or packages might not support that.
+* Bagging (Bootstrap aggregating)
 
 
 ## Sparse Data
@@ -20,6 +21,8 @@ funcions or packages might not support that.
 * Resampling
 * SMOTE: Synthetic Minority Over-sampling Technique
 * Change the evaluation rule: confusion matrix and F1 score
+(F1 score is 2*precision*recall/(precision+recall), precision is tp/(tp+fp),
+recall is tp/(tp+fn))
 * Decision tree
 
 ## Dimension Reduction

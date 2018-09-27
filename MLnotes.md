@@ -11,7 +11,9 @@ perform better if that feature actually has a non-linear correlation.
 * Inputation with mean or mode
 * Algorithms ignoring missing values: KNN, decision tree. But the existing
 funcions or packages might not support that.
-* Bagging (Bootstrap aggregating)
+* Bagging (Bootstrap aggregating) for small sample size
+* Random forests might be a good method because features are selected and are
+robust to missing values
 
 
 ## Sparse Data

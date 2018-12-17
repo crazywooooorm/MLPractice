@@ -1,0 +1,1 @@
+* Every thing in PySpark is based on a SparkSession object. The tables in Spark can be accessed by catalog. Functions and methods are built for SparkSession to help move and convert tables between Spark (catalog) and your local (data frame).

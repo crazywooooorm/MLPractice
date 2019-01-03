@@ -26,7 +26,9 @@
   * '-i': show the inode of each file
   * '-l': show in long listing
   * '-a': show all files including the hidden ones
-  
+* 'mkdir + directory_name' creates a new directory
+* 'rmdir + directory_name' removes the empty directory
+* 'rm + file_name' removes the file, 'rm -R + directory_name' removes all the files in the directory (which removes that directory). With '-i' (interactive) after 'rm', it asks confirmation of the delete. With '-v' (verbose) after 'rm', it generates a summary of what have been removed.
 
 ### Files
 * 'file' + file name gives you the type of that file
@@ -35,8 +37,6 @@
 * 'whatis' gives you a short description of that file
 * 'apropos' gives you the help for specific objects
 * 'man' gives you the detail of a command
-* 'mkdir' creates a new directory
-* 'touch' updates the date of a file, if no such file, then creates it
-* 'cp file_path new_name' copies the file from the directory and then copy to your current directory with the new name
 * 'mv target_file target_path' moves your target_file to the target_path
-* 'rm' removes the target file; 'rmdir' removes the directory
+* 'touch + file_name' updates the time stamp of the file, if the file doesn't exist, it creates ones
+* 'cp + file_path + new_file_path' copies the file and then pastes to your target directory. 'cp -R directory' can copy the whole directory. '-i' and '-v' still works here.

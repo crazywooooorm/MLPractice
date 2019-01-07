@@ -31,12 +31,18 @@
 * 'rm + file_name' removes the file, 'rm -R + directory_name' removes all the files in the directory (which removes that directory). With '-i' (interactive) after 'rm', it asks confirmation of the delete. With '-v' (verbose) after 'rm', it generates a summary of what have been removed.
 
 ### Files
-* 'file' + file name gives you the type of that file
 * 'history' gives you the recent unique commands
 * 'which' gives you the path of a file
 * 'whatis' gives you a short description of that file
 * 'apropos' gives you the help for specific objects
 * 'man' gives you the detail of a command
-* 'mv target_file target_path' moves your target_file to the target_path
 * 'touch + file_name' updates the time stamp of the file, if the file doesn't exist, it creates ones
 * 'cp + file_path + new_file_path' copies the file and then pastes to your target directory. 'cp -R directory' can copy the whole directory. '-i' and '-v' still works here.
+* 'mv target_file target_path' moves your target_file to the target_path，it can also apply on directories.
+
+
+### System Manipulation
+* File name extension doesn't really decide the file type in Linux. 'file + file_name' gives you the type of that file.
+* 'nano + file_name' opens the file in a text editor.
+* 'history' gives all the command you executed. 'history + num' gives the last num of commands. '! + command order' will re-execute the command. 'history -c' deletes all the history.
+* 'less + file_name' can view the file but can't edit，type 'q' to quit.

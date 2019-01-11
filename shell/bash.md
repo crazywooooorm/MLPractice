@@ -49,3 +49,6 @@
 * 'cat + file_name' can view the file, the difference between 'cat' and 'less' is cat shows contents in the current console, while 'less' creates a separate page. 'tac' is exactly same with 'cat', the only difference is it shows contents reversely.
 * 'head/tail + file_name' shows the head or tail of the file.
 * 'wc + file_name' do the word count, it returns the line number, words number and number of bytes.
+
+### System Manipulation
+* 'type + command_name' gives the type of the command (app direction, builtin...).

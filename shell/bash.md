@@ -15,7 +15,7 @@
 
 ### Directories
 * ~: always represents your home directory
-* /: always represenyts your root directory
+* /: always represents your root directory
 * -: represents the previous directory, usually be used in cd -
 * pwd: shows your current directory
 * pushd & popd let you go to some directory and easily get back
@@ -41,8 +41,11 @@
 * 'mv target_file target_path' moves your target_file to the target_path，it can also apply on directories.
 
 
-### System Manipulation
+### Viewing & Editing
 * File name extension doesn't really decide the file type in Linux. 'file + file_name' gives you the type of that file.
 * 'nano + file_name' opens the file in a text editor.
 * 'history' gives all the command you executed. 'history + num' gives the last num of commands. '! + command order' will re-execute the command. 'history -c' deletes all the history.
 * 'less + file_name' can view the file but can't edit，type 'q' to quit.
+* 'cat + file_name' can view the file, the difference between 'cat' and 'less' is cat shows contents in the current console, while 'less' creates a separate page. 'tac' is exactly same with 'cat', the only difference is it shows contents reversely.
+* 'head/tail + file_name' shows the head or tail of the file.
+* 'wc + file_name' do the word count, it returns the line number, words number and number of bytes.

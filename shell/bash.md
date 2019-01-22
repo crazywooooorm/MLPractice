@@ -62,3 +62,9 @@
 * [abc] matches all letters of 'a', 'b' or 'c'.
 * [:upper:] and [:lower:] represents upper and lower cases character.
 * [:digit:] represents any digit, [:alpha:] represents any letter, [:alnum:] represents letter or number.
+
+#### Alias
+* Every time when we create a new alia, use 'type + alia_name' to test whether it already exists.
+* 'alias alia_name="command content"' creates a new command. Notice that there should be no space near that '='.
+* 'unalias + alia_name' deletes that alia.
+* alias created by 'alias' only exists in the current session, to create a permanent one, we need to add that alia in ~/.bashrc

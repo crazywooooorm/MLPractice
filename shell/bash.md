@@ -52,3 +52,13 @@
 
 ### System Manipulation
 * 'type + command_name' gives the type of the command (app direction, builtin...).
+* 'which + command_name' can show the absolute directory of the command, but it only works for executable programs (which means doesn't work for shell builtin functions).
+* 'help + command_name' gives the help information for shell builtin functions; 'man + command_line' gives the help menu for those executable programs.
+* ';' can be used to separate different commands in one line; '&&' is similar but if any command throws an error, all the commands after that wouldn't be executed.
+
+#### Wildcards
+* ' * ' represents all the characters.
+* ' ? ' represents single character.
+* [abc] matches all letters of 'a', 'b' or 'c'.
+* [:upper:] and [:lower:] represents upper and lower cases character.
+* [:digit:] represents any digit, [:alpha:] represents any letter, [:alnum:] represents letter or number.

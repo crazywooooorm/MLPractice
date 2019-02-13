@@ -5,6 +5,7 @@ This repo stores all the ML related content, I will post the code and update the
 * [Bayesian ML in CU](http://www.columbia.edu/~jwp2128/Teaching/E6720/BayesianModelsMachineLearning2016.pdf)
 * [Hung-yi Lee](http://speech.ee.ntu.edu.tw/~tlkagk/courses.html)
 * Andrew's deep learning course on Coursera is still very good (as it's still free).
+* Paper on [Experience Replay](https://arxiv.org/pdf/1511.05952v3.pdf) (added 02/12/19)
 
 ## What's included here
 * [Some basic bash commands](https://github.com/crazywooooorm/MLPractice/blob/master/shell/bash.md)

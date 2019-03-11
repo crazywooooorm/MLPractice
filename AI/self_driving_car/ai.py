@@ -59,7 +59,7 @@ class Dqn():
         return action.data[0, 0]
 
     def learn(self, batch_state, batch_next_state, batch_reward, batch_action):
-        outputs = self.model(batch_state).gather(1, batch_action).unsqueeze(1).squeeze(1)
+        outputs = self.model(batch_state).gather(1, batch_action.unsqueeze(1)).squeeze(1)
         next_outputs = self.model(batch_next_state).detach().max(1)[0]
         target = self.gamma * next_outputs + batch_reward
         td_loss = F.smooth_l1_loss(outputs, target)
@@ -69,14 +69,11 @@ class Dqn():
 
     def update(self, reward, new_signal):
         new_state = torch.Tensor(new_signal).float().unsqueeze(0)
-        self.memory.push((self.last_state,
-        new_state,
-        torch.LongTensor([int(self.last_action)]),
-        torch.Tensor([self.last_reward])))
+        self.memory.push((self.last_state, new_state, torch.LongTensor([int(self.last_action)]),torch.Tensor([self.last_reward])))
 
         action = self.select_action(new_state)
         if len(self.memory.memory) > 100:
-            batch_state, batch_next_state, batch_reward, batch_action = self.memory.sample(100)
+            batch_state, batch_next_state, batch_action, batch_reward = self.memory.sample(100)
             self.learn(batch_state, batch_next_state, batch_reward, batch_action)
         self.last_action = action
         self.last_state = new_state
@@ -90,8 +87,8 @@ class Dqn():
         return sum(self.reward_window)/(len(self.reward_window)+1.)
 
     def save(self):
-        torch.save({'state_dict': self.model.state_dict(),
-        'optimizer': self.optimizer.state_dict(),
+        torch.save({'state_dict':self.model.state_dict(),
+        'optimizer':self.optimizer.state_dict(),
         }, 'last_brain.pth')
 
     def load(self):

@@ -31,3 +31,10 @@ recall is tp/(tp+fn))
 * Penalty, LASSO/Ridge, AIC/BIC
 * PCA, factor analysis, non-negative matrix factorization
 * Just remove
+
+## Error analysis
+* In a ml modeling case, typically we split our training data to training set and training-dev set, split our test data to dev set and test set. Now we have 5 different error types: Human error, training error, training-dev error, dev error and test error. The gap between those errors reflect different problems:
+  * Gap between human error and training error is avoidable error
+  * Gap between training error and training-dev error reflects the variance of the model, since training set and training-dev set are basically from the same distribution
+  * Gap between training-dev error and dev error reflects the mismatch of the data, which means the distribution of training and test data are different
+  * Gap between dev error and test error reflects the overfitting problem 

@@ -37,4 +37,8 @@ recall is tp/(tp+fn))
   * Gap between human error and training error is avoidable error
   * Gap between training error and training-dev error reflects the variance of the model, since training set and training-dev set are basically from the same distribution
   * Gap between training-dev error and dev error reflects the mismatch of the data, which means the distribution of training and test data are different
-  * Gap between dev error and test error reflects the overfitting problem 
+  * Gap between dev error and test error reflects the overfitting problem
+
+* Transfer learning is used when you have different purposes and don't want to train the whole model again. Typically you can just change the last few layers to adjust to another purpose (e.g. another classification goal). Usually you have to make sure these models have the same input, or one model wouldn't be applied to another one (e.g. you can't use animal images to train a radiation model).
+
+* End-to-end processing: typically this is discussed when it comes to deep learning since deep learning model can creates its own features on different layers. The end-to-end processing is basically just apply deep learning model on the raw data without creating some hand-designed features from raw data. It gives more freedom to the model itself but we can't guarantee it works as well as those hand-designed features. Also typically it demands much larger size of data to learn features like your hand-designed features. 

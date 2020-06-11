@@ -1,6 +1,12 @@
 # Basic ML
 This markdown is a review for basic ML knowledge. The structure follows syllabus of Andrew Ng's CS229 course. Notes of this course can be found at http://cs229.stanford.edu/notes/.
 
+## Gradient Descent
+* Gradient descent is a typical algorithm to optimize parameter. We initialize our parameters, to optimize it (so we can minimize our cost function), we subtract the partial derivative of cost function multiplying a learning rate from our parameter. After couple of iterations, our parameter shall converge to an optimal value.
+* Notice in each iteration, we usually need to calculate the derivative of whole training set, this is called **batch gradient descent**.
+* When we have a very huge data set, traverse the whole set in each iteration would take too much time. Instead, we can split the whole set to many small batches, each iteration only use one batch. This is called **mini-batch gradient descent**.
+* An even more extreme case would be using just one sample in each iteration. This is called **stochastic gradient descent**. Notice this will probably never give us a converged result, but we believe it would give us a good approximation to the 'real' optimal value. 
+
 
 ## GDA & Naive Bayes
 ### Discriminative Vs Generative
@@ -20,3 +26,5 @@ This markdown is a review for basic ML knowledge. The structure follows syllabus
 ### Naive Bayes
 *  The assumption of Naive Beyes is that: the different dimensions of X are independent. Use the spam detector as an example, it means the probability of one word exists in email is only related to Y (spam or not spam), not related to other words in this email.
 * If a Naive Bayes model saw an element that never showed in training set (e.g. a new word), p(x|y = 1) and p(x| y = 0) will all be 0, which make our posterior a 0/0 situation. To avoid this, we use **Laplace Smoothing**, which adds a constant to denominator of posterior likelihood to avoid 0/0 problem.  
+
+## SVM

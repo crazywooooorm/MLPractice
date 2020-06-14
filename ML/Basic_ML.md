@@ -5,7 +5,7 @@ This markdown is a review for basic ML knowledge. The structure follows syllabus
 * Gradient descent is a typical algorithm to optimize parameter. We initialize our parameters, to optimize it (so we can minimize our cost function), we subtract the partial derivative of cost function multiplying a learning rate from our parameter. After couple of iterations, our parameter shall converge to an optimal value.
 * Notice in each iteration, we usually need to calculate the derivative of whole training set, this is called **batch gradient descent**.
 * When we have a very huge data set, traverse the whole set in each iteration would take too much time. Instead, we can split the whole set to many small batches, each iteration only use one batch. This is called **mini-batch gradient descent**.
-* An even more extreme case would be using just one sample in each iteration. This is called **stochastic gradient descent**. Notice this will probably never give us a converged result, but we believe it would give us a good approximation to the 'real' optimal value. 
+* An even more extreme case would be using just one sample in each iteration. This is called **stochastic gradient descent**. Notice this will probably never give us a converged result, but we believe it would give us a good approximation to the 'real' optimal value.
 
 
 ## GDA & Naive Bayes
@@ -28,3 +28,20 @@ This markdown is a review for basic ML knowledge. The structure follows syllabus
 * If a Naive Bayes model saw an element that never showed in training set (e.g. a new word), p(x|y = 1) and p(x| y = 0) will all be 0, which make our posterior a 0/0 situation. To avoid this, we use **Laplace Smoothing**, which adds a constant to denominator of posterior likelihood to avoid 0/0 problem.  
 
 ## SVM
+
+
+## Decision Tree & Ensemble Methods
+### Decision Tree
+* The loss function we use for decision tree is cross-entropy function L(p) = -sum(p*log(p)). At each node we are just trying to find a split to maximize our reduction on cross-entropy function.
+* Regularization techniques in decision tree includes setting minimum leaf size, setting maximum depth or number of nodes, enforcing minimum loss decrease. Another typical way is to train the full tree, then **prune** nodes that minimally decrease misclassification or squared error, as measured on a **validation set**.
+* Suppose we have decision tree with depth d, n samples and f features, the train time would be O(nfd). As at each node we need to traverse all features, and for each feature, we need to traverse all samples to find the best split point if it is  a continuous feature.
+* Single decision usually has high variance.
+
+### Ensemble Methods
+* Combine couple of **independent** weak learners and take the majority vote, we will end up with a much better prediction performance compared to single weak learner.
+* **Bagging** use the technique **Bootstrap** to reduce variance. We sample couple of subsamples from whole training set, and train a weak learner on each of them. Finally we aggregate the result from all of them to make our final prediction.
+* Bagging + decision tree is called **Random Forest**. Notice we want to make sure our weak learners are as independent as possible, so we sample both training samples and features to be used. Imagine there is very useful feature, we will naturally pick it in each subsample, which brings a high correlation between those weak learners. So we also pick a subset of features every time to reduce variance.
+* **Boosting** is a bias-reduction technique. It trained weak learners on weighted samples. **AdaBoost** trains a bunch of weak learners in sequence, at each iteration, it calculates the weight for this learner based on model error, and increases weights for those misclassified points. Finally, combine the prediction results from those weighted weak learners.
+* AdaBoost can end up with a non-linear boundary.
+
+ 

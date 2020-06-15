@@ -44,4 +44,7 @@ This markdown is a review for basic ML knowledge. The structure follows syllabus
 * **Boosting** is a bias-reduction technique. It trained weak learners on weighted samples. **AdaBoost** trains a bunch of weak learners in sequence, at each iteration, it calculates the weight for this learner based on model error, and increases weights for those misclassified points. Finally, combine the prediction results from those weighted weak learners.
 * AdaBoost can end up with a non-linear boundary.
 
- 
+## Machine Learning Theory
+* One assumption for a machine learning model is that the training set has the same distribution with testing set. So when we saw the model is not performing well, this shall be the first factor to consider.
+* Bias and variance are just first and second moments of your parameter. If variance -> 0 when sample size -> infinity, then we call the algorithm is statistically **efficient**; If Bias -> 0 when sample size -> infinity, we call the algorithm is **consistent**.
+* How to understand the **bias/variance trade-off**? If we believe there is an optimal parameter existing, then the possible parameters we can get from our algorithm is a set. The bigger the set is, the more likely that optimal parameter would be included in our set, which gives us a smaller bias; while the bigger the set is, the bigger variance we will have. 

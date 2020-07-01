@@ -49,9 +49,18 @@ This markdown is a review for basic ML knowledge. The structure follows syllabus
 * Bias and variance are just first and second moments of your parameter. If variance -> 0 when sample size -> infinity, then we call the algorithm is statistically **efficient**; If Bias -> 0 when sample size -> infinity, we call the algorithm is **consistent**.
 * How to understand the **bias/variance trade-off**? If we believe there is an optimal parameter existing, then the possible parameters we can get from our algorithm is a set. The bigger the set is, the more likely that optimal parameter would be included in our set, which gives us a smaller bias; while the bigger the set is, the bigger variance we will have.
 * What is the sign of high bias? High training error. It's actually an **under-fit** problem.
-* What is the sign of high variance? High testing error given low training error. It's actually an **over-fitting** problem. 
+* What is the sign of high variance? High testing error given low training error. It's actually an **over-fitting** problem.
 
 ## Neural Networks
 * Activation function is the soul of neural network. If we don't apply activation function in each layer, not matter how deep your network is, the whole model is just a linear regression.
 * The potential disadvantage of sigmoid function (and tanh function) as an activation function is: its gradient is close to 0 when the linear part output (z) is very big or very small, which bring the **vanishing gradient problem**. Given this fact, people prefer relu as an activation function.  
 * For optimization of neural network, we prefer mini-batch as it has a good balance of speed and robustness. Another way to speed up the optimization is **Momentum**, the idea is: gradient is decreasing at different speed at different dimension, so instead of using pure backpropagation, we also consider the average past gradient of each dimension when optimizing their corresponding parameter, so dimensions with more space to improve will have a bigger gradient, which makes the optimization much faster.
+
+## EM Algorithm
+* EM algorithm is widely used in unsupervised learning. **K-means** and **GMM** are just special cases of EM algorithm with specific distribution assumptions.
+* **E-step** is the guess of which cluster each sample belongs. **M-step** updates the parameters of our model based on the guesses from E-step.
+* In M-step, our goal is to maximize our log likelihood function. Notice that, directly find the parameters to maximize the likelihood function is quite difficult. In this case, we are using the concave property of log function (Jensen's Inequality), instead of maximize the original likelihood function, we try to maximize its lower-bound.
+* The maximum likelihood estimations are quite intuitive: the prior of each cluster is the proportion of samples belonging to this cluster; the mean of each cluster is the mean of samples belonging to this cluster.
+* The maxima EM finds are local maxima of the log-likelihood, to make sure we achieve the best estimation, we should try different initiative values. The good part is, different estimations are comparable, the estimation with higher likelihood would be better.
+
+## Factor Analysis

@@ -28,7 +28,11 @@ This markdown is a review for basic ML knowledge. The structure follows syllabus
 * If a Naive Bayes model saw an element that never showed in training set (e.g. a new word), p(x|y = 1) and p(x| y = 0) will all be 0, which make our posterior a 0/0 situation. To avoid this, we use **Laplace Smoothing**, which adds a constant to denominator of posterior likelihood to avoid 0/0 problem.  
 
 ## SVM
-
+* SVM (support vector machine) tries to find a hyperplane to classify two class and at the same time maximize the margin between two classes. The vector that defines the hyperplane is called **support vector**.
+* The classification problem can be represented by an optimization problem (maximize margin) under a certain constrain (all points need to be separated correctly by the hyperplane). To solve this problem, we transform it into a dual problem by using **Lagrange multipliers**.
+* Original SVM can only deal with linear hyperplane situation. For those non-linear classification problems, we can project the original points to high dimensions then classify them with a linear hyperplane.
+* When we project points to high dimensional spaces, the projection function can be very complicated, calculating the inner product of two projected functions can be very computationally expensive. To deal with this situation, we can find some **kernel functions** to reduce our work. For example, **RBF kernel** can deal with the situations when we project our points to infinite dimensional spaces.
+* Original SVM is not robust as it needs to make sure each point is correctly classified by the hyperplane, which makes it easily to be affected by outliers. We can add a **slack variable** to make it more robust. This SVM is called **soft-margin SVM**.   
 
 ## Decision Tree & Ensemble Methods
 ### Decision Tree

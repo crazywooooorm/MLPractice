@@ -70,10 +70,6 @@ Essentially, [XGBoost](https://arxiv.org/pdf/1603.02754.pdf) is also using the g
 
 
 ## Q&A Insights
-* MSE weighs more on large error, which also makes it less robust to outlier than MAE.
-
-* How to tell if a solution is local optimum? If you saw a tendency of premature convergence (converges too early), or get different optima with different initializations, you might have a local optimum.
-
 * PCA is not scale invariant, so the data needs to be standardized first. With the covariance matrix of input data, we can calculate the eigenvectors of it and use a specific number of components to represent the original data. The pros is PCA can be used to dimension reduction or unsupervised learning, while the cons is dimension reduction can only happen when variables are correlated, and the components might be hard to interpolate.
 
 * When we care more about positive, then false positive is more important than false negative, which means we care more about precision; If we care more about negative, then false negative is more important than false positive, which means we care more about recall.  

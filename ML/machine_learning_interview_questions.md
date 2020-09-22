@@ -26,3 +26,12 @@
 * How to identify local optimum:
   * Tendency of premature convergence (converges too early)
   * Get different optima with different initializations
+
+## 6. What is latent semantic indexing? What is it used for? What are the specific limitations of the method?
+* Indexing and retrieval method that uses singular value decomposition to identify patterns in the relationships between the terms and concepts contained in an unstructured collection of text
+* Based on the principle that words that are used in the same contexts tend to have similar meanings
+* Often used in learning word meanings or [latent semantic analysis](https://www.asc.ohio-state.edu/reidy.16/LSAtutorial.pdf)
+
+## 7. Explain what resampling methods are and why they are useful
+* repeatedly drawing samples from a training set and refitting a model on each subset in order to obtain additional information about the fitted model
+* Mostly commonly used in cross-validation (without replacement) and bootstrap (with replacement)

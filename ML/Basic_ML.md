@@ -67,4 +67,19 @@ This markdown is a review for basic ML knowledge. The structure follows syllabus
 * The maximum likelihood estimations are quite intuitive: the prior of each cluster is the proportion of samples belonging to this cluster; the mean of each cluster is the mean of samples belonging to this cluster.
 * The maxima EM finds are local maxima of the log-likelihood, to make sure we achieve the best estimation, we should try different initiative values. The good part is, different estimations are comparable, the estimation with higher likelihood would be better.
 
+## Density-Based Clustering
+* Density-based clustering algorithms can be used when assumptions for EM (parametric algorithm) are not met:
+  * round or spherical clusters
+  * most dense in center of the sphere (gaussian sphere)
+  * not contaminated by noise/outliers
+* Density-based clustering is a **non-parametric** method, it looks for regions of the data that are **denser** than the surrounding space, rather than looking for clusters with a particular shape,
+* Traditional DBSCAN (Density-based spatial clustering of applications with noise) demands both minimum cluster size and distance threshold epsilon as hyperparameter, while HDBSCAN (Hierarchical DBSCAN) is a DBSCAN implemented with varying epsilon values, which only needs minumum cluster size as parameter.
+* [HDBSCAN algorithm](https://towardsdatascience.com/understanding-hdbscan-and-density-based-clustering-121dbee1320e):
+  * 1. Given minimum cluster size K, set lambda as smallest value of core distance (shortest distance to have K points included)
+  * 2. Filter for points meets the lambda distance
+  * 3. Connect points within lambda (if points from two clusters are within the lambda distance, then two clusters are connected and merged), this step helps create the clusters
+  * 4. Set lambda to next smallest value of core distance and repeat from step 2, until all points become same cluster
+  * 5. Finally we got a Hierarchical clustering tree, each lambda value is a level (hierarchical) of the tree
+
+
 ## Factor Analysis

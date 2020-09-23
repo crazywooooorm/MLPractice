@@ -35,3 +35,13 @@
 ## 7. Explain what resampling methods are and why they are useful
 * repeatedly drawing samples from a training set and refitting a model on each subset in order to obtain additional information about the fitted model
 * Mostly commonly used in cross-validation (without replacement) and bootstrap (with replacement)
+
+## 8. What is principal component analysis? Explain the sort of problems you would use PCA for. Also explain its limitations as a method
+* Principal component analysis (PCA) is the process of using an orthogonal transformation to convert a set of observations of correlated variables into a set of values of linearly uncorrelated variables (principal components)
+* Dimension reduction
+* PCA algorithm:
+  * standardization: PCA is not scale invariant
+  * calculate the covariance matrix
+  * calculate the eigenvectors of covariance matrix
+  * choose k principal components to cover x% (typically x = 99) variance
+* Dimension reduction can only happen when variables are correlated, and the components might be hard to interpolate

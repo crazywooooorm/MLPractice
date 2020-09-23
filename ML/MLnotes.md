@@ -67,10 +67,3 @@ Essentially, [XGBoost](https://arxiv.org/pdf/1603.02754.pdf) is also using the g
 
 ## Follow Andrew Ng Machine Learning course to have a comprehensive review
 [Andrew Ng Machine Learning](https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
-
-
-## Q&A Insights
-* PCA is not scale invariant, so the data needs to be standardized first. With the covariance matrix of input data, we can calculate the eigenvectors of it and use a specific number of components to represent the original data. The pros is PCA can be used to dimension reduction or unsupervised learning, while the cons is dimension reduction can only happen when variables are correlated, and the components might be hard to interpolate.
-
-* When we care more about positive, then false positive is more important than false negative, which means we care more about precision; If we care more about negative, then false negative is more important than false positive, which means we care more about recall.  
-ROC

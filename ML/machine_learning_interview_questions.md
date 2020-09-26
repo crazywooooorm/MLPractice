@@ -45,3 +45,10 @@
   * calculate the eigenvectors of covariance matrix
   * choose k principal components to cover x% (typically x = 99) variance
 * Dimension reduction can only happen when variables are correlated, and the components might be hard to interpolate
+
+## 9. What is collaborative filtering, n-grams, cosine distance?
+* Collaborative filtering, used in recommender systems:
+  * Memory based: calculate Euclidean or cosine distance between members or item, then predict scores based on history of similar members or items
+  * Model based: before applying memory based method, using dimensionality reduction technique (SVD, PCA...) to compress the sparse matrix
+* N-grams: a contiguous sequence of n items from a given sample of text or speech
+* Cosine distance: calculate similarity between two vectors, cosine(A, B) = <A * B>/(|A| * |B|)

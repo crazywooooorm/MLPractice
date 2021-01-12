@@ -1,6 +1,13 @@
 # Basic ML
 This markdown is a review for basic ML knowledge. The structure follows syllabus of Andrew Ng's CS229 course. Notes of this course can be found at http://cs229.stanford.edu/notes/.
 
+## Logistic Regression
+* The form of logistic regression (sigmoid) is actually derived from logit function: log(p/(1-p)) = WX, so coefficients of logistic regression can be interpreted as **expected change in log odds for a one-unit increase in the input variable**.
+* Each observation can be represented as a joint distribution: P(xi, yi) = P(y=1|x)^(y)*(1-P(y=1|x))^(1-y), when we multiply all these joint distributions, we get the likelihood function.
+* Notice the **log likelihood function** is same with the **cross entropy loss function** (in opposite direction).
+* Why use cross entropy instead of MSE as loss function in logistic regression? Because when y_hat is close to 0 or 1, the gradient of loss function would become extremely small (notice the shape of sigmoid function, almost flat at two sides). While the gradient of cross entropy is only related to the difference between y and y_hat (https://blog.csdn.net/yinyu19950811/article/details/81321944).
+* The likelihood function of Logistic regression doesn't have closed-form solution (as sigmoid function is nonlinear), so we need iterative optimizations (gradient descent, Newton's method...) to approximate to the optimal solution.
+
 ## Gradient Descent
 * Gradient descent is a typical algorithm to optimize parameter. We initialize our parameters, to optimize it (so we can minimize our cost function), we subtract the partial derivative of cost function multiplying a learning rate from our parameter. After couple of iterations, our parameter shall converge to an optimal value.
 * Notice in each iteration, we usually need to calculate the derivative of whole training set, this is called **batch gradient descent**.
